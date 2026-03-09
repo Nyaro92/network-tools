@@ -1,71 +1,48 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pingeo - Test de vitesse</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='check.css') }}">
-    <script src="{{ url_for('static', filename='check.js') }}?v=2.0" defer></script>
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='check.css') }}">
+    <script src="{{ url_for('static', filename='bande.js') }}?v=1.0" defer></script>
 </head>
 <body>
-<nav class="navbar">
+    <nav class="navbar">
     <div src="#"><img src="{{ url_for('static', filename='logo2.png') }}" alt="" width="85px"></div>
     <ul class="nav_liste">
-        <li><a href="#">Acceuil</a></li>
-        <li><a href="{{url_for('ping') }}">Ping</a></li>
+        <li><a href="{{ url_for('principe')}}">Acceuil</a></li>
+        <li><a href="{{ url_for('ping') }}">Ping</a></li>
         <li><a href="#apropos"> A propos</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-    <div class="dashboard">        
-        <div class="stat-card">
-            <div class="marks">
-                <div class="mark m0">0</div>
-                <div class="mark m25">25</div>
-                <div class="mark m50">50</div>
-                <div class="mark m75">75</div>
-                <div class="mark m100">100</div>
-            </div>
-            <div class="needle" id="needle-download"></div>
-            
-            <span>DOWNLOAD</span>
-            <div class="value" id="val-download">0.00</div>
-            <span class="unit">Mbps</span>
+<main id="forme">
+
+<!--<form action="/ping" method="post">-->
+    <form>
+    <div class="form-container">
+        <input type="text" name="lien" placeholder="example.com..." id="lien" required>
+
+        <input type="number" name="paquets" id="nombre">
+        <div class="btn-group">
+            <button type="submit" name="action" value="btn_pingeo" id="ping"><i>Ping</i></button>
+            <button type="submit" name="action" value="btn_mtr" id="mtr"><i>Tout lancer</i></button>
         </div>
-
-        <button type="button" class="btn-start" id="start-button">
-            START
-        </button>
-
-        <div class="stat-card">
-            <div class="marks">
-                <div class="mark m0">0</div>
-                <div class="mark m25">25</div>
-                <div class="mark m50">50</div>
-                <div class="mark m75">75</div>
-                <div class="mark m100">100</div>
-            </div>
-            <div class="needle" id="needle-upload"></div>
-            
-            <span>UPLOAD</span>
-            <div class="value" id="val-upload">0.00</div>
-            <span class="unit">Mbps</span>
-        </div>
-
+       
+             <div class="value" id="req_ping"> <!--Resultat--> </div>
     </div>
 
-    <form id="contenu" onsubmit="return false;"></form>
-        <div class="value" id="resultat"></div>
+</form>
 
+</main>
 <footer class="footer" id="apropos">
     <div class="container">
 
         <!-- A propos -->
         <div class="apropos">
             <p>
-         Passionné par le dévéloppement Web python, l’automatisation et l’administration réseaux.
+                Passionné par le dévéloppement Web python, l’automatisation et l’administration réseaux.
             </p>
         </div>
 
@@ -109,5 +86,6 @@
     </div>
 </footer>
 
+    
 </body>
 </html>
