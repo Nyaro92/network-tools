@@ -1,6 +1,5 @@
 *.out
 rem.py
-*.txt
 environnement/
 __pycache__/
 
