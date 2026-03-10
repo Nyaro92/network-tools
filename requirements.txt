@@ -1,3 +1,4 @@
 #créer l'environnement virtuel et fait pip install <nom_module>
+gunicorn
 flask 
 speedtest-cli
