@@ -33,4 +33,4 @@ def bande_passante():
    # On le transforme en JSON pour le JavaScript
    return jsonify(donnees)
 if __name__== "__main__":
-   app.run(debug=True,host="127.0.0.1", port=5000)
+   app.run()
